@@ -1803,7 +1803,9 @@ src/components/Footer.vue
 		<Logo/>
 		<a
 			href="https://github.com/zer0bi9"
-			
+			target="_blank">
+			(c){{new Date().getFullYear()}} ZER0BI9
+		</a>
 	</footer>
 </template>
 
