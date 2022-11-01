@@ -1798,6 +1798,37 @@ src/components/Footer.vue
 - 날짜와 닉네임 하단 출력
 - 스타일 적용
 ```vue
+<template>
+	<footer>
+		<Logo/>
+		<a
+			href="https://github.com/zer0bi9"
+			target="_blank">(c){{ new Date().getFullYear() }} ZER0BI9</a>
+	</footer>
+</template>
+
+<script>
+	import Logo from '~/components/Logo';
+	
+	export default {
+		components: {
+			Logo
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	footer {
+		padding: 70px 0;
+		text-align: center;
+		opacity: .3;
+		.logo {
+			display: block;
+			margin-bottom: 4px;
+		}
+	}
+</style>
+
 ```
 
 src/App.vue
