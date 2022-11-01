@@ -1791,3 +1791,63 @@ export default {
 ### 로딩 상태 나타내기
 - reference
 [bootstrap spinner](https://getbootstrap.com/docs/5.2/components/spinners/)
+
+## Footer
+src/components/Footer.vue
+- Logo 컴포넌트 연결
+- 날짜와 닉네임 하단 출력
+- 스타일 적용
+```vue
+<template>
+	<footer>
+		<Logo/>
+		<a
+			href="https://github.com/zer0bi9"
+			target="_blank">(c){{ new Date().getFullYear() }} ZER0BI9</a>
+	</footer>
+</template>
+
+<script>
+	import Logo from '~/components/Logo';
+	
+	export default {
+		components: {
+			Logo
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	footer {
+		padding: 70px 0;
+		text-align: center;
+		opacity: .3;
+		.logo {
+			display: block;
+			margin-bottom: 4px;
+		}
+	}
+</style>
+```
+
+src/App.vue
+- Footer 컴포넌트 연결(전 영역)
+```vue
+<template>
+	<Header />
+	<RouterView />
+	<Footer />
+</template>
+
+<script>
+import Header from '~/components/Header'
+import Footer from '~/components/Footer'
+
+export default {
+	components : {
+		Header,
+		Footer
+	}
+}
+</script>
+```
