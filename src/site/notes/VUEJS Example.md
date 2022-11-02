@@ -16,26 +16,25 @@ import Movie from './Movie'
 import About from './About'
   
 export default createRouter({
-// Hash mode
-// https://google.com/#/search <- url 쪽에 표시되는 방법
-history: createWebHashHistory(),
-
-// pages
-routes: [
-{
-path: '/',
-component: Home
-},
-
-{
-path: '/movie',
-component: Movie
-},
-
-{
-path: '/about',
-component: About
-}]
+	// Hash mode
+	// https://google.com/#/search <- url 쪽에 표시되는 방법
+	history: createWebHashHistory(),
+	
+	// pages
+	routes: [
+		{
+			path: '/',
+			component: Home
+		},
+		{
+			path: '/movie',
+			component: Movie
+		},	
+		{
+			path: '/about',
+			component: About
+		}
+	]
 })
 ```
 
@@ -45,7 +44,7 @@ component: About
 src/app.vue
 ```vue
 <template>
-<RouterView />
+	<RouterView />
 </template>
 ....
 ```
@@ -69,7 +68,7 @@ src/scss/main.scss
 ```scss
 ....
 <style lang="scss">
-@import "~/scss/main.scss"
+	@import "~/scss/main.scss"
 </style>
 ```
 
@@ -84,47 +83,46 @@ src/scss/main.scss
 src/components/Header.vue
 ```vue
 <template>
-<header>
-
-<div
-class="nav nav-pills">
-
-<div 
-v-for="nav in navigations"
-:key="nav.name"
-active-class="active"
-class="nav-item">
-
-<RouterLink
-:to="nav.href"
-class="nav-link">
-{{ nav.name }}
-</RouterLink>
-</div>
-</div>
-</header>
+	<header>
+	
+		<div
+		class="nav nav-pills">
+	
+			<div 
+			v-for="nav in navigations"
+			:key="nav.name"
+			active-class="active"
+			class="nav-item">
+				<RouterLink
+				:to="nav.href"
+				class="nav-link">
+				{{ nav.name }}
+				</RouterLink>
+			</div>
+		</div>
+	</header>
 </template>
 
 <script>
-export default {
-data() {
-return {
-navigations: [
-{
-name: 'Search',
-href: '/'
-},
-{
-name: 'Movie',
-href: '/movie'
-},
-{
-name: 'About',
-href: '/about'
-}]
-}
-}
-}
+	export default {
+		data() {
+			return {
+				navigations: [
+				{
+					name: 'Search',
+					href: '/'
+				},
+				{
+					name: 'Movie',
+					href: '/movie'
+				},
+				{
+					name: 'About',
+					href: '/about'
+				}]
+			}
+		}
+	}
 </script>
 <style lang="scss" scoped>
 </style>
@@ -138,8 +136,8 @@ href: '/about'
 src/App.vue
 ```vue
 <template>
-<Header /> <!-- Header 컴포넌트 추가 -->
-<RouterView />
+	<Header /> <!-- Header 컴포넌트 추가 -->
+	<RouterView />
 </template>
 ....
 ```
@@ -154,11 +152,11 @@ src/App.vue
 /index.html
 ```html
 ....
-<head>
-....
-<link rel="preconnect" href="https://fonts.googleapis.com">  
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<head>
+	....
+	<link rel="preconnect" href="https://fonts.googleapis.com">  
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 	body {
@@ -187,21 +185,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
-
-.logo {
-font-family: "Oswald",sans-serif;
-font-size: 20px;
-color: $black;
-text-decoration: none;
- &:hover {
- color: $black;
- }
- span {
-  color: $primary;
- }
-}
-
+	@import "~/scss/main";
+	
+	.logo {
+	font-family: "Oswald",sans-serif;
+	font-size: 20px;
+	color: $black;
+	text-decoration: none;
+		&:hover {
+			color: $black;
+		}
+		span {
+		  color: $primary;
+		}
+	}
 </style>
 ```
 
@@ -216,25 +213,25 @@ src/components/Header.vue
 </header>
 
 <script>
-import Logo from '~/components/Logo'
-export default {
- components: {
-  Logo
-},
-....
-}
+	import Logo from '~/components/Logo'
+	export default {
+		components: {
+		  Logo
+		},
+		...
+	}
 </script>
 
 <style lang="scss" scoped>
- header {
-  height: 70px;
-  padding: 0 40px;
-  display: flex;
-  align-items: center;
- .logo {
-  margin-right: 40px;
- }
-}
+	header {
+		height: 70px;
+		padding: 0 40px;
+		display: flex;
+		align-items: center;
+		.logo {
+			margin-right: 40px;
+		}
+	}
 </style>
 ```
 - reference
@@ -263,22 +260,22 @@ src/components/Headline.vue
 </template>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
-.container {
- padding-top: 40px;
-}
-h1 {
- line-height: 1;
- font-family: "Oswald", sans-serif;
- font-size: 80px;
-span {
- color: $primary;
-}
-
-p {
- margin: 30px 0;
- color: $gray-600;
-}}
+	@import "~/scss/main";
+	.container {
+		padding-top: 40px;
+	}
+	h1 {
+		line-height: 1;
+		font-family: "Oswald", sans-serif;
+		font-size: 80px;
+		span {
+			color: $primary;
+		}
+		p {
+			margin: 30px 0;
+			color: $gray-600;
+		}
+	}
 </style>
 ```
 
@@ -286,7 +283,7 @@ src/routes/Home.vue
 - Headline 컴포넌트 연결
 ```vue
 <template>
- <Headline />
+	<Headline />
 </template>
 ....
 ```
@@ -3147,3 +3144,16 @@ src/routes/Home.vue
 ```
 
 ## Summery - Vue Router
+### RouterView Component
+- 페이지가 출력(렌더링)되는 영역 컴포넌트
+- 변경하는 페이지가 출력되는 영역, 달라지는 페이지의 내용을 어디에서 출력할 것인가
+
+### RouterLink Component
+- 페이지 이동을 위한 링크 컴포넌트
+- 링크 제어
+
+### $route
+- Route(페이지) 정보를 가지는 객체
+
+### $router
+- Router(페이지) 조작을 위한 객체
